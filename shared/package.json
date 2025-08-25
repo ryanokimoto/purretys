@@ -1,0 +1,20 @@
+{
+    "name": "@purretys/shared",
+    "version": "1.0.0",
+    "description": "Shared utilities and types for Purretys",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+      "build": "tsc",
+      "watch": "tsc --watch",
+      "clean": "rm -rf dist",
+      "type-check": "tsc --noEmit"
+    },
+    "devDependencies": {
+      "typescript": "^5.3.3"
+    },
+    "dependencies": {
+      "zod": "^3.22.4"
+    }
+  }
+  

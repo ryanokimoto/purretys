@@ -1,0 +1,39 @@
+# requirements.txt - Production dependencies
+
+# Core Framework
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Database
+sqlalchemy
+alembic
+psycopg2-binary
+redis
+
+# Authentication & Security
+python-jose[cryptography]
+passlib[bcrypt]
+python-decouple
+pydantic
+pydantic-settings
+
+# WebSockets
+websockets
+python-socketio
+
+# Background Tasks
+celery
+celery[redis]
+
+# Utilities
+python-dateutil
+pytz
+httpx
+aiofiles
+
+# Email
+python-dotenv
+
+# CORS
+fastapi-cors

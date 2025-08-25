@@ -1,0 +1,63 @@
+{
+    "name": "purretys",
+    "version": "1.0.0",
+    "description": "Collaborative virtual pet care game",
+    "private": true,
+    "workspaces": [
+      "frontend",
+      "mobile",
+      "shared"
+    ],
+    "scripts": {
+      "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+      "dev:backend": "cd backend && python -m uvicorn app.main:app --reload --port 8000",
+      "dev:frontend": "cd frontend && npm run dev",
+      "build": "npm run build:frontend",
+      "build:frontend": "cd frontend && npm run build",
+      "test": "npm run test:backend && npm run test:frontend",
+      "test:backend": "cd backend && pytest",
+      "test:frontend": "cd frontend && npm run test",
+      "lint": "npm run lint:backend && npm run lint:frontend",
+      "lint:backend": "cd backend && flake8 app/",
+      "lint:frontend": "eslint 'frontend/src/**/*.{ts,tsx}'",
+      "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+      "docker:dev": "docker-compose -f docker/docker-compose.dev.yml up",
+      "docker:build": "docker-compose -f docker/docker-compose.yml build",
+      "clean": "npm run clean:frontend && npm run clean:backend",
+      "clean:frontend": "cd frontend && rm -rf node_modules dist",
+      "clean:backend": "cd backend && find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true",
+      "setup": "npm install && npm run setup:backend && npm run setup:frontend",
+      "setup:backend": "cd backend && python -m venv venv && . venv/bin/activate && pip install -r requirements.txt",
+      "setup:frontend": "cd frontend && npm install"
+    },
+    "devDependencies": {
+      "@types/node": "^20.11.0",
+      "@typescript-eslint/eslint-plugin": "^6.19.0",
+      "@typescript-eslint/parser": "^6.19.0",
+      "concurrently": "^8.2.2",
+      "eslint": "^8.56.0",
+      "eslint-config-prettier": "^9.1.0",
+      "eslint-plugin-react": "^7.33.2",
+      "eslint-plugin-react-hooks": "^4.6.0",
+      "prettier": "^3.2.4",
+      "typescript": "^5.3.3"
+    },
+    "engines": {
+      "node": ">=18.0.0",
+      "npm": ">=9.0.0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/yourusername/purretys.git"
+    },
+    "keywords": [
+      "virtual-pet",
+      "gamification",
+      "collaboration",
+      "task-management",
+      "react",
+      "fastapi"
+    ],
+    "author": "Your Name",
+    "license": "MIT"
+  }
