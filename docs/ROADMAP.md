@@ -17,6 +17,7 @@
 - [ ] Create documentation templates
 - [ ] Set up development environment configs
 - [ ] Configure ESLint, Prettier, and TypeScript configs
+- [ ] Configure Docker Containers
 
 #### 1.2 Basic Backend
 - [ ] FastAPI application skeleton
