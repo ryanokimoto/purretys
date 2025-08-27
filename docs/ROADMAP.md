@@ -15,12 +15,12 @@
 - [X] Initialize Git repository with proper .gitignore
 - [X] Set up monorepo structure (backend/frontend/shared)
 - [X] Create documentation templates
-- [ ] Set up development environment configs
+- [X] Set up development environment configs
 - [ ] Configure ESLint, Prettier, and TypeScript configs
 - [ ] Configure Docker Containers
 
 #### 1.2 Basic Backend
-- [ ] FastAPI application skeleton
+- [X] FastAPI application skeleton
 - [ ] Database models:
   ```python
   # Core models
