@@ -24,6 +24,7 @@ python-socketio
 
 # Background Tasks
 celery
+redis
 celery[redis]
 
 # Utilities
@@ -37,3 +38,12 @@ python-dotenv
 
 # CORS
 fastapi-cors
+
+# Dev Tools
+pytest
+pytest-asyncio
+black
+flake8
+mypy
+
+sentry-sdk

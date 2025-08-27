@@ -1,3 +1,5 @@
+# backend/app/main.py
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
@@ -30,7 +32,7 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# Configure CORS
+# Configure CORS with simple origins
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -88,3 +90,7 @@ async def test_endpoint():
             "features": ["authentication", "pets", "tasks", "real-time updates"]
         }
     }
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
