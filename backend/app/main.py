@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 import logging
 from typing import Dict, Any
+from app.core.database import init_db
 
 # Configure logging
 logging.basicConfig(
@@ -18,11 +19,11 @@ logger = logging.getLogger(__name__)
 async def lifespan(app: FastAPI):
     # Startup
     logger.info("🐱 Purretys API starting up...")
-    logger.info("Database connections would be initialized here")
+    init_db()  # Initialize database tables
     yield
     # Shutdown
     logger.info("Purretys API shutting down...")
-    logger.info("Cleanup tasks would run here")
+
 
 # Create FastAPI instance
 app = FastAPI(
